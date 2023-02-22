@@ -1,7 +1,7 @@
 
 
 """
-Updated Wed 15 Feb
+Updated Wed 22 Feb
 """
 
 
@@ -52,22 +52,6 @@ def select_sort(arr):
     return arr
 
 
-def binary_search(arr, value):
-    low = 0
-    high = len(arr) - 1
-
-    while low <= high:
-        mid = (low + high) // 2
-        if arr[mid] == value:
-            return mid
-        elif arr[mid] < value:
-            low = mid + 1
-        else:
-            high = mid - 1
-
-    return -1
-
-
 def bubble_sort(arr):
     flag = True
     while flag:
@@ -87,3 +71,22 @@ def bubble_sort(arr):
                 flag = True
             # increase the count variable by one to check future el by el[n + 1]
             count += 1
+
+
+def binary_search(arr, value):
+    # 2 Parameters: array and value to find
+    # Iterative
+    # Returns position of element or -1 if element does noto exist
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == value:
+            return mid
+        elif arr[mid] < value:
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    return -1
